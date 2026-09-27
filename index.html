@@ -2,137 +2,332 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Free Word Counter Tool Online</title>
 
-<meta name="description"
-content="Use our free word counter tool to count words, characters, sentences, and paragraphs quickly. Simple, accurate, and easy to use.">
+    <meta name="description"
+        content="Use our free word counter tool to count words, characters, sentences, and paragraphs quickly. Simple, accurate, and easy to use.">
+
+    <meta name="robots" content="index, follow">
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">WordCountHub</div>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
 
-            <nav>
+            <div class="logo">
+                <a href="./">WordCountHub</a>
+            </div>
+
+            <nav class="main-nav">
                 <a href="./">Home</a>
-                <a href="#how-to-use">How It Works</a>
+                <a href="#how-it-works">How It Works</a>
             </nav>
+
         </div>
     </header>
 
 
+    <!-- Hero Section -->
     <main>
 
         <section class="hero">
+            <div class="container">
 
-            <h1>Free Word Counter Tool</h1>
+                <h1>Free Word Counter Tool Online</h1>
 
-            <p>
-                Count words, characters, sentences, and paragraphs quickly
-                with our simple online word counter.
-            </p>
+                <p>
+                    Quickly count words, characters, sentences, and paragraphs
+                    with our free online word counter. Simply enter or paste
+                    your text below to get instant results.
+                </p>
 
+            </div>
         </section>
 
 
-        <section class="tool-container">
+        <!-- Word Counter Tool -->
+        <section class="tool-section">
+            <div class="container">
 
-            <textarea
-                id="text"
-                placeholder="Type or paste your text here..."
-                oninput="countWords()"></textarea>
+                <div class="tool-card">
+
+                    <h2>Word Counter</h2>
+
+                    <p class="tool-intro">
+                        Enter or paste your text below and click the
+                        <strong>Count Words</strong> button to see your results.
+                    </p>
+
+                    <textarea id="text"
+                        placeholder="Type or paste your text here..."></textarea>
 
 
-            <div class="stats">
+                    <!-- Statistics -->
+                    <div class="stats">
 
-                <div class="stat-box">
-                    <span id="wordCount">0</span>
-                    <small>Words</small>
-                </div>
+                        <div class="stat-box">
+                            <span class="stat-number" id="wordCount">0</span>
+                            <span class="stat-label">Words</span>
+                        </div>
 
-                <div class="stat-box">
-                    <span id="characterCount">0</span>
-                    <small>Characters</small>
-                </div>
+                        <div class="stat-box">
+                            <span class="stat-number" id="characterCount">0</span>
+                            <span class="stat-label">Characters</span>
+                        </div>
 
-                <div class="stat-box">
-                    <span id="sentenceCount">0</span>
-                    <small>Sentences</small>
-                </div>
+                        <div class="stat-box">
+                            <span class="stat-number" id="sentenceCount">0</span>
+                            <span class="stat-label">Sentences</span>
+                        </div>
 
-                <div class="stat-box">
-                    <span id="paragraphCount">0</span>
-                    <small>Paragraphs</small>
+                        <div class="stat-box">
+                            <span class="stat-number" id="paragraphCount">0</span>
+                            <span class="stat-label">Paragraphs</span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Buttons -->
+                    <div class="button-group">
+
+                        <button class="count-button" onclick="countWords()">
+                            Count Words
+                        </button>
+
+                        <button class="clear-button" onclick="clearText()">
+                            Clear
+                        </button>
+
+                    </div>
+
                 </div>
 
             </div>
-
-
-            <div class="buttons">
-
-                <button onclick="countWords()" class="count-btn">
-                    Count Words
-                </button>
-
-                <button onclick="clearText()" class="clear-btn">
-                    Clear
-                </button>
-
-            </div>
-
         </section>
 
 
-        <section class="content" id="how-to-use">
+        <!-- Detailed Content -->
+        <section class="content-section" id="how-it-works">
 
-            <h2>How to Use This Word Counter</h2>
+            <div class="container">
 
-            <p>
-                Using our free word counter is simple. Type or paste your
-                text into the box above, and the tool will automatically
-                calculate your words, characters, sentences, and paragraphs.
-            </p>
+                <h2>How to Use Our Free Word Counter Tool</h2>
+
+                <p>
+                    Our free word counter tool makes it easy to check the
+                    length of your writing within seconds. Whether you are
+                    writing an article, blog post, essay, assignment, social
+                    media post, or any other type of content, you can use this
+                    tool to quickly count your words and characters.
+                </p>
+
+                <p>
+                    Simply type or paste your text into the text box above and
+                    click the <strong>Count Words</strong> button. The tool will
+                    instantly show you the total number of words, characters,
+                    sentences, and paragraphs in your text.
+                </p>
 
 
-            <h2>What Is a Word Counter?</h2>
+                <h3>Follow These Simple Steps</h3>
 
-            <p>
-                A word counter is an online tool that counts the number of
-                words in a piece of text. It can be useful for students,
-                writers, bloggers, content creators, and anyone who needs
-                to meet a specific word limit.
-            </p>
+                <p>
+                    Using the word counter is simple. Just follow these steps:
+                </p>
+
+                <ul>
+                    <li>
+                        Type your text directly into the text box.
+                    </li>
+
+                    <li>
+                        Paste an article, essay, or any other written content.
+                    </li>
+
+                    <li>
+                        Click the <strong>Count Words</strong> button.
+                    </li>
+
+                    <li>
+                        Check your total words, characters, sentences, and
+                        paragraphs.
+                    </li>
+
+                    <li>
+                        Click <strong>Clear</strong> when you want to start
+                        again.
+                    </li>
+                </ul>
 
 
-            <h2>Why Use a Word Counter?</h2>
+                <h2>What Is a Word Counter?</h2>
 
-            <p>
-                A word counter can help you quickly check whether your
-                article, essay, assignment, or other content meets its
-                required length.
-            </p>
+                <p>
+                    A word counter is an online tool that counts the number of
+                    words in written text. It can be useful when you need to
+                    meet a specific word limit or simply want to understand
+                    how long your content is.
+                </p>
+
+                <p>
+                    Instead of counting words manually, you can paste your text
+                    into our free word counter and get the results instantly.
+                    The tool also counts characters, sentences, and paragraphs,
+                    giving you a quick overview of your content.
+                </p>
+
+
+                <h2>Why Use a Word Counter?</h2>
+
+                <p>
+                    Knowing the length of your content can be important for
+                    many types of writing. Students may need to follow an
+                    assignment word limit, while bloggers and writers may want
+                    to keep their articles within a specific length.
+                </p>
+
+                <p>
+                    A word counter can also help you review your content before
+                    publishing it. By checking the number of words, characters,
+                    sentences, and paragraphs, you can better understand the
+                    structure and length of your writing.
+                </p>
+
+
+                <h3>Our Word Counter Can Help You:</h3>
+
+                <ul>
+                    <li>
+                        Check the total number of words in your content.
+                    </li>
+
+                    <li>
+                        Count characters quickly and easily.
+                    </li>
+
+                    <li>
+                        See how many sentences your text contains.
+                    </li>
+
+                    <li>
+                        Count the number of paragraphs in your writing.
+                    </li>
+
+                    <li>
+                        Check whether your content meets a required word limit.
+                    </li>
+
+                    <li>
+                        Review articles, essays, assignments, and other written
+                        content.
+                    </li>
+                </ul>
+
+
+                <h2>Who Can Use This Word Counter?</h2>
+
+                <p>
+                    This tool is designed for anyone who needs to check the
+                    length of written content. You do not need to install any
+                    software or create an account to use it.
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>Students:</strong> Check essay and assignment
+                        word counts.
+                    </li>
+
+                    <li>
+                        <strong>Bloggers:</strong> Check the length of blog
+                        posts and articles.
+                    </li>
+
+                    <li>
+                        <strong>Writers:</strong> Keep writing within a specific
+                        word limit.
+                    </li>
+
+                    <li>
+                        <strong>Freelancers:</strong> Check content before
+                        delivering it to clients.
+                    </li>
+
+                    <li>
+                        <strong>Teachers:</strong> Quickly review the length of
+                        written work.
+                    </li>
+
+                    <li>
+                        <strong>Content creators:</strong> Check text before
+                        publishing online.
+                    </li>
+                </ul>
+
+
+                <h2>Word Count Example</h2>
+
+                <p>
+                    For example, if you paste a short paragraph into the tool,
+                    it will automatically analyze the text and display the
+                    number of words, characters, sentences, and paragraphs.
+                    This makes it easier to check your content without
+                    manually counting anything.
+                </p>
+
+                <p>
+                    You can use the tool as many times as you need. Simply
+                    replace the existing text with new content and click
+                    <strong>Count Words</strong> again to get updated results.
+                </p>
+
+
+                <h2>Free, Simple, and Easy to Use</h2>
+
+                <p>
+                    Our word counter is designed with simplicity in mind. The
+                    interface is easy to understand, so beginners can use it
+                    without any technical knowledge. Just enter your text,
+                    click the button, and view your results.
+                </p>
+
+                <p>
+                    Whether you are checking a short paragraph or a longer
+                    piece of content, this tool gives you a quick way to
+                    understand the basic statistics of your writing.
+                </p>
+
+            </div>
 
         </section>
 
     </main>
 
 
-    <footer>
+    <!-- Footer -->
+    <footer class="site-footer">
 
-        <p>© 2026 WordCountHub. All rights reserved.</p>
+        <div class="container">
+
+            <p>
+                © 2026 WordCountHub. All rights reserved.
+            </p>
+
+        </div>
 
     </footer>
 
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
