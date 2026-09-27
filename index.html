@@ -78,11 +78,12 @@
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📝%3C/text%3E%3C/svg%3E"
     >
 
-    <!-- Styles -->
+    <!-- Main stylesheet -->
     <link
         rel="stylesheet"
         href="style.css"
     >
+
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -102,6 +103,341 @@
         }
     }
     </script>
+
+
+    <!--
+        Small compatibility styles.
+
+        These make sure the important tool elements
+        still look correct even if some styles are
+        missing from style.css.
+    -->
+
+    <style>
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+
+        /* Statistics */
+
+        .stats-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+
+        .stat-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 15px 18px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #ffffff;
+        }
+
+
+        .stat-row.primary-stat {
+            background: #eff6ff;
+            border-color: #bfdbfe;
+        }
+
+
+        .stat-icon {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: #f3f4f6;
+            font-size: 20px;
+        }
+
+
+        .primary-stat .stat-icon {
+            background: #dbeafe;
+        }
+
+
+        .stat-content {
+            display: flex;
+            align-items: baseline;
+            gap: 9px;
+            min-width: 0;
+        }
+
+
+        .stat-number {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #111827;
+        }
+
+
+        .stat-label {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+
+        /* Word limit */
+
+        .word-limit-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+
+        .limit-input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+
+        #wordLimit {
+            width: 140px;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font: inherit;
+        }
+
+
+        .small-button {
+            padding: 10px 13px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            background: #ffffff;
+            cursor: pointer;
+            font: inherit;
+        }
+
+
+        .small-button:hover {
+            background: #f3f4f6;
+        }
+
+
+        .limit-status {
+            min-height: 24px;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+
+
+        .limit-status.within-limit {
+            color: #15803d;
+        }
+
+
+        .limit-status.over-limit {
+            color: #dc2626;
+            font-weight: 700;
+        }
+
+
+        /* Textarea */
+
+        #textInput {
+            width: 100%;
+            min-height: 260px;
+            box-sizing: border-box;
+            resize: vertical;
+            padding: 18px;
+            border: 1px solid #d1d5db;
+            border-radius: 12px;
+            font: inherit;
+            line-height: 1.7;
+            outline: none;
+        }
+
+
+        #textInput:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+
+        .textarea-help {
+            margin-top: 8px;
+            color: #6b7280;
+            font-size: 0.85rem;
+        }
+
+
+        /* Action buttons */
+
+        .tool-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+
+        .button {
+            border: 0;
+            border-radius: 9px;
+            padding: 11px 16px;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+
+        .button:hover {
+            transform: translateY(-1px);
+        }
+
+
+        .button-primary {
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+
+        .button-secondary {
+            background: #f3f4f6;
+            color: #111827;
+        }
+
+
+        .button-danger {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+
+        .action-message {
+            min-height: 22px;
+            margin-top: 10px;
+            color: #2563eb;
+            font-size: 0.9rem;
+        }
+
+
+        /* Feature rows */
+
+        .feature-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+
+        .feature-title h3 {
+            margin: 0;
+        }
+
+
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            flex: 0 0 32px;
+        }
+
+
+        /* Step layout */
+
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+
+        .step-number {
+            width: 38px;
+            height: 38px;
+            min-width: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #2563eb;
+            color: #ffffff;
+            font-weight: 800;
+        }
+
+
+        .step-content {
+            flex: 1;
+        }
+
+
+        .step-content h3 {
+            margin-top: 0;
+        }
+
+
+        /* CTA */
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+
+        @media (max-width: 600px) {
+
+            .word-limit-row {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+
+            .limit-input-wrapper {
+                width: 100%;
+            }
+
+
+            #wordLimit {
+                flex: 1;
+                width: auto;
+            }
+
+
+            .stat-content {
+                flex-wrap: wrap;
+            }
+
+
+            .tool-actions {
+                flex-direction: column;
+            }
+
+
+            .tool-actions .button {
+                width: 100%;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -123,7 +459,9 @@
             aria-label="WordCountHub Home"
         >
 
-            <span class="logo-icon">📝</span>
+            <span class="logo-icon">
+                📝
+            </span>
 
             <span>
                 WordCount<span class="logo-accent">Hub</span>
@@ -301,7 +639,6 @@
                 class="stats-list"
                 aria-live="polite"
             >
-
 
                 <div class="stat-row primary-stat">
 
@@ -555,8 +892,6 @@
         <div class="steps-list">
 
 
-            <!-- Step 1 -->
-
             <div class="step-item">
 
                 <div class="step-number">
@@ -580,8 +915,6 @@
 
 
 
-            <!-- Step 2 -->
-
             <div class="step-item">
 
                 <div class="step-number">
@@ -604,8 +937,6 @@
             </div>
 
 
-
-            <!-- Step 3 -->
 
             <div class="step-item">
 
@@ -666,13 +997,18 @@
         <div class="features-list">
 
 
-            <!-- Feature 1 -->
-
             <article class="feature-row">
 
                 <div class="feature-title">
-                    <span class="feature-icon">🔢</span>
-                    <h3>Word Count</h3>
+
+                    <span class="feature-icon">
+                        🔢
+                    </span>
+
+                    <h3>
+                        Word Count
+                    </h3>
+
                 </div>
 
                 <p>
@@ -684,13 +1020,18 @@
 
 
 
-            <!-- Feature 2 -->
-
             <article class="feature-row">
 
                 <div class="feature-title">
-                    <span class="feature-icon">🔤</span>
-                    <h3>Character Count</h3>
+
+                    <span class="feature-icon">
+                        🔤
+                    </span>
+
+                    <h3>
+                        Character Count
+                    </h3>
+
                 </div>
 
                 <p>
@@ -701,13 +1042,18 @@
 
 
 
-            <!-- Feature 3 -->
-
             <article class="feature-row">
 
                 <div class="feature-title">
-                    <span class="feature-icon">⏱️</span>
-                    <h3>Reading Time</h3>
+
+                    <span class="feature-icon">
+                        ⏱️
+                    </span>
+
+                    <h3>
+                        Reading Time
+                    </h3>
+
                 </div>
 
                 <p>
@@ -719,13 +1065,18 @@
 
 
 
-            <!-- Feature 4 -->
-
             <article class="feature-row">
 
                 <div class="feature-title">
-                    <span class="feature-icon">🎤</span>
-                    <h3>Speaking Time</h3>
+
+                    <span class="feature-icon">
+                        🎤
+                    </span>
+
+                    <h3>
+                        Speaking Time
+                    </h3>
+
                 </div>
 
                 <p>
@@ -737,13 +1088,18 @@
 
 
 
-            <!-- Feature 5 -->
-
             <article class="feature-row">
 
                 <div class="feature-title">
-                    <span class="feature-icon">🎯</span>
-                    <h3>Word Limit</h3>
+
+                    <span class="feature-icon">
+                        🎯
+                    </span>
+
+                    <h3>
+                        Word Limit
+                    </h3>
+
                 </div>
 
                 <p>
@@ -755,13 +1111,18 @@
 
 
 
-            <!-- Feature 6 -->
-
             <article class="feature-row">
 
                 <div class="feature-title">
-                    <span class="feature-icon">🔒</span>
-                    <h3>Privacy Friendly</h3>
+
+                    <span class="feature-icon">
+                        🔒
+                    </span>
+
+                    <h3>
+                        Privacy Friendly
+                    </h3>
+
                 </div>
 
                 <p>
@@ -850,8 +1211,6 @@
 >
 
     <div class="container narrow-container">
-
-        <!-- ONLY ONE FAQ HEADING -->
 
         <h2 class="faq-main-title">
             Frequently Asked Questions
@@ -1030,9 +1389,16 @@
                 your word count and writing statistics.
             </p>
 
+            <!--
+                IMPORTANT:
+                This uses JavaScript instead of href="#tool-heading"
+                so the URL does NOT change to #tool-heading.
+            -->
+
             <a
-                href="#tool-heading"
+                href="./"
                 class="cta-button"
+                id="useToolButton"
             >
                 Use Word Counter
             </a>
@@ -1133,11 +1499,661 @@
 
 
 
-<!-- JavaScript -->
+<!-- =========================================
+     WORD COUNTER JAVASCRIPT
+========================================= -->
 
-<script src="script.js"></script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =========================================
+       GET ELEMENTS
+    ========================================= */
+
+    const textInput =
+        document.getElementById("textInput");
+
+    const wordCount =
+        document.getElementById("wordCount");
+
+    const characterCount =
+        document.getElementById("characterCount");
+
+    const characterNoSpaceCount =
+        document.getElementById("characterNoSpaceCount");
+
+    const sentenceCount =
+        document.getElementById("sentenceCount");
+
+    const paragraphCount =
+        document.getElementById("paragraphCount");
+
+    const readingTime =
+        document.getElementById("readingTime");
+
+    const speakingTime =
+        document.getElementById("speakingTime");
+
+    const wordLimit =
+        document.getElementById("wordLimit");
+
+    const clearLimit =
+        document.getElementById("clearLimit");
+
+    const limitStatus =
+        document.getElementById("limitStatus");
+
+    const copyButton =
+        document.getElementById("copyButton");
+
+    const downloadButton =
+        document.getElementById("downloadButton");
+
+    const clearButton =
+        document.getElementById("clearButton");
+
+    const actionMessage =
+        document.getElementById("actionMessage");
+
+    const useToolButton =
+        document.getElementById("useToolButton");
+
+
+
+    /* =========================================
+       SETTINGS
+    ========================================= */
+
+    const WORDS_PER_MINUTE_READING = 200;
+
+    const WORDS_PER_MINUTE_SPEAKING = 130;
+
+
+
+    /* =========================================
+       COUNT WORDS
+    ========================================= */
+
+    function getWordCount(text) {
+
+        const trimmedText =
+            text.trim();
+
+        if (!trimmedText) {
+            return 0;
+        }
+
+        /*
+            Unicode-aware word detection.
+
+            This handles normal English text as well as
+            many accented/non-English words.
+        */
+
+        const matches =
+            trimmedText.match(
+                /[\p{L}\p{N}]+(?:['’\-][\p{L}\p{N}]+)*/gu
+            );
+
+        return matches
+            ? matches.length
+            : 0;
+    }
+
+
+
+    /* =========================================
+       COUNT SENTENCES
+    ========================================= */
+
+    function getSentenceCount(text) {
+
+        const trimmedText =
+            text.trim();
+
+        if (!trimmedText) {
+            return 0;
+        }
+
+        /*
+            A sentence is counted when it ends with:
+            . ! or ?
+
+            This also handles repeated punctuation such as:
+            "Really?!"
+        */
+
+        const matches =
+            trimmedText.match(
+                /[^.!?]+(?:[.!?]+|$)/g
+            );
+
+        if (!matches) {
+            return 0;
+        }
+
+        return matches.filter(function (sentence) {
+
+            return /[\p{L}\p{N}]/u.test(sentence);
+
+        }).length;
+    }
+
+
+
+    /* =========================================
+       COUNT PARAGRAPHS
+    ========================================= */
+
+    function getParagraphCount(text) {
+
+        const trimmedText =
+            text.trim();
+
+        if (!trimmedText) {
+            return 0;
+        }
+
+        /*
+            Paragraphs are separated by one or more
+            blank lines.
+        */
+
+        return trimmedText
+            .split(/\n\s*\n+/)
+            .filter(function (paragraph) {
+
+                return paragraph.trim().length > 0;
+
+            })
+            .length;
+    }
+
+
+
+    /* =========================================
+       FORMAT TIME
+    ========================================= */
+
+    function formatTime(minutes) {
+
+        if (minutes <= 0) {
+            return "0 min";
+        }
+
+
+        if (minutes < 1) {
+
+            const seconds =
+                Math.max(
+                    1,
+                    Math.round(minutes * 60)
+                );
+
+            return seconds + " sec";
+        }
+
+
+        const roundedMinutes =
+            Math.ceil(minutes);
+
+        return roundedMinutes + " min";
+    }
+
+
+
+    /* =========================================
+       UPDATE WORD LIMIT
+    ========================================= */
+
+    function updateWordLimit(count) {
+
+        const limit =
+            parseInt(
+                wordLimit.value,
+                10
+            );
+
+
+        if (
+            !wordLimit.value ||
+            Number.isNaN(limit) ||
+            limit <= 0
+        ) {
+
+            limitStatus.textContent = "";
+
+            limitStatus.className =
+                "limit-status";
+
+            return;
+        }
+
+
+        const remaining =
+            limit - count;
+
+
+        if (remaining > 0) {
+
+            limitStatus.textContent =
+                remaining +
+                " word" +
+                (remaining === 1 ? "" : "s") +
+                " remaining";
+
+            limitStatus.className =
+                "limit-status within-limit";
+
+        }
+        else if (remaining === 0) {
+
+            limitStatus.textContent =
+                "You have reached your " +
+                limit +
+                "-word limit.";
+
+            limitStatus.className =
+                "limit-status within-limit";
+
+        }
+        else {
+
+            const over =
+                Math.abs(remaining);
+
+            limitStatus.textContent =
+                "You are " +
+                over +
+                " word" +
+                (over === 1 ? "" : "s") +
+                " over the limit.";
+
+            limitStatus.className =
+                "limit-status over-limit";
+        }
+    }
+
+
+
+    /* =========================================
+       UPDATE ALL STATISTICS
+    ========================================= */
+
+    function updateStatistics() {
+
+        const text =
+            textInput.value;
+
+
+        const words =
+            getWordCount(text);
+
+
+        const characters =
+            text.length;
+
+
+        const charactersWithoutSpaces =
+            text.replace(
+                /\s/g,
+                ""
+            ).length;
+
+
+        const sentences =
+            getSentenceCount(text);
+
+
+        const paragraphs =
+            getParagraphCount(text);
+
+
+        const readingMinutes =
+            words /
+            WORDS_PER_MINUTE_READING;
+
+
+        const speakingMinutes =
+            words /
+            WORDS_PER_MINUTE_SPEAKING;
+
+
+
+        /* Update HTML */
+
+        wordCount.textContent =
+            words.toLocaleString();
+
+
+        characterCount.textContent =
+            characters.toLocaleString();
+
+
+        characterNoSpaceCount.textContent =
+            charactersWithoutSpaces.toLocaleString();
+
+
+        sentenceCount.textContent =
+            sentences.toLocaleString();
+
+
+        paragraphCount.textContent =
+            paragraphs.toLocaleString();
+
+
+        readingTime.textContent =
+            formatTime(readingMinutes);
+
+
+        speakingTime.textContent =
+            formatTime(speakingMinutes);
+
+
+        updateWordLimit(words);
+    }
+
+
+
+    /* =========================================
+       TEXT INPUT
+    ========================================= */
+
+    textInput.addEventListener(
+        "input",
+        function () {
+
+            updateStatistics();
+
+            /*
+                Clear any old action message
+                when the user starts typing.
+            */
+
+            if (
+                actionMessage.textContent
+            ) {
+
+                actionMessage.textContent = "";
+
+            }
+
+        }
+    );
+
+
+
+    /* =========================================
+       WORD LIMIT INPUT
+    ========================================= */
+
+    wordLimit.addEventListener(
+        "input",
+        function () {
+
+            updateStatistics();
+
+        }
+    );
+
+
+
+    /* =========================================
+       CLEAR WORD LIMIT
+    ========================================= */
+
+    clearLimit.addEventListener(
+        "click",
+        function () {
+
+            wordLimit.value = "";
+
+            limitStatus.textContent = "";
+
+            limitStatus.className =
+                "limit-status";
+
+            wordLimit.focus();
+
+        }
+    );
+
+
+
+    /* =========================================
+       CLEAR TEXT
+    ========================================= */
+
+    clearButton.addEventListener(
+        "click",
+        function () {
+
+            textInput.value = "";
+
+            updateStatistics();
+
+            actionMessage.textContent =
+                "Text cleared.";
+
+            textInput.focus();
+
+        }
+    );
+
+
+
+    /* =========================================
+       COPY TEXT
+    ========================================= */
+
+    copyButton.addEventListener(
+        "click",
+        async function () {
+
+            const text =
+                textInput.value;
+
+
+            if (!text.trim()) {
+
+                actionMessage.textContent =
+                    "There is no text to copy.";
+
+                return;
+            }
+
+
+            try {
+
+                await navigator.clipboard.writeText(
+                    text
+                );
+
+                actionMessage.textContent =
+                    "Text copied to clipboard.";
+
+            }
+            catch (error) {
+
+                /*
+                    Fallback for browsers where
+                    navigator.clipboard is unavailable.
+                */
+
+                const temporaryTextarea =
+                    document.createElement("textarea");
+
+                temporaryTextarea.value =
+                    text;
+
+                temporaryTextarea.style.position =
+                    "fixed";
+
+                temporaryTextarea.style.opacity =
+                    "0";
+
+                document.body.appendChild(
+                    temporaryTextarea
+                );
+
+                temporaryTextarea.select();
+
+                try {
+
+                    document.execCommand(
+                        "copy"
+                    );
+
+                    actionMessage.textContent =
+                        "Text copied to clipboard.";
+
+                }
+                catch (fallbackError) {
+
+                    actionMessage.textContent =
+                        "Unable to copy automatically. Please copy the text manually.";
+
+                }
+
+                temporaryTextarea.remove();
+            }
+
+        }
+    );
+
+
+
+    /* =========================================
+       DOWNLOAD TEXT
+    ========================================= */
+
+    downloadButton.addEventListener(
+        "click",
+        function () {
+
+            const text =
+                textInput.value;
+
+
+            if (!text.trim()) {
+
+                actionMessage.textContent =
+                    "There is no text to download.";
+
+                return;
+            }
+
+
+            const blob =
+                new Blob(
+                    [text],
+                    {
+                        type: "text/plain;charset=utf-8"
+                    }
+                );
+
+
+            const url =
+                URL.createObjectURL(blob);
+
+
+            const link =
+                document.createElement("a");
+
+
+            link.href =
+                url;
+
+
+            link.download =
+                "wordcounthub-text.txt";
+
+
+            document.body.appendChild(
+                link
+            );
+
+
+            link.click();
+
+
+            link.remove();
+
+
+            URL.revokeObjectURL(
+                url
+            );
+
+
+            actionMessage.textContent =
+                "Text downloaded.";
+        }
+    );
+
+
+
+    /* =========================================
+       USE WORD COUNTER BUTTON
+       WITHOUT CHANGING URL
+    ========================================= */
+
+    useToolButton.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            const counter =
+                document.querySelector(
+                    ".counter-card"
+                );
+
+
+            if (counter) {
+
+                counter.scrollIntoView(
+                    {
+                        behavior: "smooth",
+                        block: "start"
+                    }
+                );
+
+            }
+
+
+            /*
+                Put cursor in textarea after
+                the smooth scroll starts.
+            */
+
+            setTimeout(
+                function () {
+
+                    textInput.focus();
+
+                },
+                500
+            );
+
+        }
+    );
+
+
+
+    /* =========================================
+       INITIALIZE
+    ========================================= */
+
+    updateStatistics();
+
+});
+
+</script>
 
 
 </body>
+
 </html>
 ```
