@@ -1,6 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +12,7 @@
 
     <meta
         name="description"
-        content="Free online word counter to instantly count words, characters, sentences, and paragraphs. Check reading time, speaking time, and word limits with WordCountHub."
+        content="Free online word counter to count words, characters, sentences, paragraphs, reading time, and speaking time. Fast, simple, and easy to use."
     >
 
     <meta
@@ -30,7 +33,7 @@
 
     <meta
         property="og:description"
-        content="Count words, characters, sentences, paragraphs, reading time, and more with our free online word counter."
+        content="Count words, characters, sentences, paragraphs, reading time, and speaking time instantly with WordCountHub."
     >
 
     <meta
@@ -64,7 +67,6 @@
         content="Count words, characters, sentences, paragraphs, and reading time instantly."
     >
 
-    <!-- Theme -->
     <meta
         name="theme-color"
         content="#2563eb"
@@ -76,7 +78,7 @@
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📝%3C/text%3E%3C/svg%3E"
     >
 
-    <!-- Stylesheet -->
+    <!-- Styles -->
     <link
         rel="stylesheet"
         href="style.css"
@@ -100,772 +102,1042 @@
         }
     }
     </script>
+
 </head>
+
 
 <body>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container header-inner">
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="site-header">
+
+    <div class="container header-inner">
+
+        <a
+            href="./"
+            class="logo"
+            aria-label="WordCountHub Home"
+        >
+
+            <span class="logo-icon">📝</span>
+
+            <span>
+                WordCount<span class="logo-accent">Hub</span>
+            </span>
+
+        </a>
+
+
+        <nav
+            class="main-nav"
+            aria-label="Main navigation"
+        >
+
+            <a href="./">
+                Word Counter
+            </a>
+
+            <a href="#how-it-works">
+                How It Works
+            </a>
+
+            <a href="#faq">
+                FAQ
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     MAIN
+========================================= -->
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="eyebrow">
+                FREE ONLINE WRITING TOOL
+            </span>
+
+            <h1>
+                Free Word Counter
+            </h1>
+
+            <p class="hero-description">
+                Count words, characters, sentences, paragraphs,
+                reading time, and speaking time instantly.
+                No registration required.
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================================
+             WORD COUNTER TOOL
+        ========================================= -->
+
+        <section
+            class="counter-card"
+            aria-labelledby="tool-heading"
+        >
+
+            <div class="tool-header">
+
+                <div>
+
+                    <h2 id="tool-heading">
+                        Word Counter
+                    </h2>
+
+                    <p>
+                        Type or paste your text below.
+                        Your results update automatically.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Text Area -->
+
+            <div class="textarea-wrapper">
+
+                <label
+                    for="textInput"
+                    class="sr-only"
+                >
+                    Enter or paste your text
+                </label>
+
+                <textarea
+                    id="textInput"
+                    placeholder="Start typing or paste your text here..."
+                    spellcheck="true"
+                    aria-describedby="text-help"
+                ></textarea>
+
+                <p
+                    id="text-help"
+                    class="textarea-help"
+                >
+                    Your text is processed directly in your browser.
+                </p>
+
+            </div>
+
+
+
+            <!-- Word Limit -->
+
+            <div class="word-limit-row">
+
+                <label for="wordLimit">
+                    Word limit
+                </label>
+
+                <div class="limit-input-wrapper">
+
+                    <input
+                        type="number"
+                        id="wordLimit"
+                        min="1"
+                        placeholder="No limit"
+                        inputmode="numeric"
+                        aria-label="Word limit"
+                    >
+
+                    <button
+                        type="button"
+                        id="clearLimit"
+                        class="small-button"
+                    >
+                        Clear
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="limitStatus"
+                class="limit-status"
+                aria-live="polite"
+            ></div>
+
+
+
+            <!-- =========================================
+                 STATISTICS
+            ========================================= -->
+
+            <div
+                class="stats-list"
+                aria-live="polite"
+            >
+
+
+                <div class="stat-row primary-stat">
+
+                    <div class="stat-icon">
+                        🔢
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span
+                            class="stat-number"
+                            id="wordCount"
+                        >
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Words
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-row">
+
+                    <div class="stat-icon">
+                        🔤
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span
+                            class="stat-number"
+                            id="characterCount"
+                        >
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Characters
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-row">
+
+                    <div class="stat-icon">
+                        ✏️
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span
+                            class="stat-number"
+                            id="characterNoSpaceCount"
+                        >
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Characters Without Spaces
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-row">
+
+                    <div class="stat-icon">
+                        📝
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span
+                            class="stat-number"
+                            id="sentenceCount"
+                        >
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Sentences
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-row">
+
+                    <div class="stat-icon">
+                        📄
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span
+                            class="stat-number"
+                            id="paragraphCount"
+                        >
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Paragraphs
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-row">
+
+                    <div class="stat-icon">
+                        📖
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span
+                            class="stat-number"
+                            id="readingTime"
+                        >
+                            0 min
+                        </span>
+
+                        <span class="stat-label">
+                            Reading Time
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-row">
+
+                    <div class="stat-icon">
+                        🎤
+                    </div>
+
+                    <div class="stat-content">
+
+                        <span
+                            class="stat-number"
+                            id="speakingTime"
+                        >
+                            0 min
+                        </span>
+
+                        <span class="stat-label">
+                            Speaking Time
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================================
+                 ACTION BUTTONS
+            ========================================= -->
+
+            <div class="tool-actions">
+
+                <button
+                    type="button"
+                    id="copyButton"
+                    class="button button-primary"
+                >
+                    📋 Copy Text
+                </button>
+
+                <button
+                    type="button"
+                    id="downloadButton"
+                    class="button button-secondary"
+                >
+                    ⬇️ Download
+                </button>
+
+                <button
+                    type="button"
+                    id="clearButton"
+                    class="button button-danger"
+                >
+                    🗑️ Clear
+                </button>
+
+            </div>
+
+
+            <p
+                id="actionMessage"
+                class="action-message"
+                aria-live="polite"
+            ></p>
+
+        </section>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     HOW TO USE
+========================================= -->
+
+<section
+    id="how-it-works"
+    class="content-section"
+>
+
+    <div class="container narrow-container">
+
+        <span class="section-label">
+            HOW IT WORKS
+        </span>
+
+        <h2>
+            How to Use the Word Counter
+        </h2>
+
+        <p>
+            WordCountHub makes it easy to check the length
+            of your writing within seconds.
+        </p>
+
+
+        <div class="steps-list">
+
+
+            <!-- Step 1 -->
+
+            <div class="step-item">
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Enter Your Text
+                    </h3>
+
+                    <p>
+                        Type directly into the editor or paste
+                        an existing document.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Step 2 -->
+
+            <div class="step-item">
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Get Instant Results
+                    </h3>
+
+                    <p>
+                        Your word, character, sentence, and
+                        paragraph counts update automatically.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Step 3 -->
+
+            <div class="step-item">
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Check Your Word Limit
+                    </h3>
+
+                    <p>
+                        Set a word limit to see whether your
+                        text stays within the required length.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FEATURES
+========================================= -->
+
+<section class="features-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                FEATURES
+            </span>
+
+            <h2>
+                More Than Just a Counter
+            </h2>
+
+            <p>
+                Useful writing statistics for students, writers,
+                bloggers, professionals, and content creators.
+            </p>
+
+        </div>
+
+
+
+        <div class="features-list">
+
+
+            <!-- Feature 1 -->
+
+            <article class="feature-row">
+
+                <div class="feature-title">
+                    <span class="feature-icon">🔢</span>
+                    <h3>Word Count</h3>
+                </div>
+
+                <p>
+                    Quickly find the total number of words
+                    in your text.
+                </p>
+
+            </article>
+
+
+
+            <!-- Feature 2 -->
+
+            <article class="feature-row">
+
+                <div class="feature-title">
+                    <span class="feature-icon">🔤</span>
+                    <h3>Character Count</h3>
+                </div>
+
+                <p>
+                    See character totals with and without spaces.
+                </p>
+
+            </article>
+
+
+
+            <!-- Feature 3 -->
+
+            <article class="feature-row">
+
+                <div class="feature-title">
+                    <span class="feature-icon">⏱️</span>
+                    <h3>Reading Time</h3>
+                </div>
+
+                <p>
+                    Get an estimated reading time based on
+                    your total word count.
+                </p>
+
+            </article>
+
+
+
+            <!-- Feature 4 -->
+
+            <article class="feature-row">
+
+                <div class="feature-title">
+                    <span class="feature-icon">🎤</span>
+                    <h3>Speaking Time</h3>
+                </div>
+
+                <p>
+                    Estimate how long your text may take
+                    to read aloud.
+                </p>
+
+            </article>
+
+
+
+            <!-- Feature 5 -->
+
+            <article class="feature-row">
+
+                <div class="feature-title">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Word Limit</h3>
+                </div>
+
+                <p>
+                    Set a custom word limit and instantly
+                    check your writing progress.
+                </p>
+
+            </article>
+
+
+
+            <!-- Feature 6 -->
+
+            <article class="feature-row">
+
+                <div class="feature-title">
+                    <span class="feature-icon">🔒</span>
+                    <h3>Privacy Friendly</h3>
+                </div>
+
+                <p>
+                    Text calculations happen directly in your
+                    browser without requiring an account.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     WORD COUNTER INFORMATION
+========================================= -->
+
+<section class="content-section">
+
+    <div class="container narrow-container">
+
+        <span class="section-label">
+            WORD COUNTER GUIDE
+        </span>
+
+        <h2>
+            What Is a Word Counter?
+        </h2>
+
+        <p>
+            A word counter is an online tool that calculates
+            the number of words in a piece of text. Word counting
+            is useful when writing essays, articles, blog posts,
+            applications, reports, social media content, and
+            other documents with specific length requirements.
+        </p>
+
+        <p>
+            WordCountHub also provides character, sentence,
+            paragraph, reading-time, and speaking-time statistics
+            so you can understand the length of your writing at a glance.
+        </p>
+
+
+        <h2>
+            Why Use a Word Counter?
+        </h2>
+
+        <p>
+            Many types of writing have recommended or required
+            lengths. Keeping track of your word count can help
+            you stay within an assignment requirement, article
+            target, application limit, or other writing constraint.
+        </p>
+
+
+        <h2>
+            Who Can Use a Word Counter?
+        </h2>
+
+        <p>
+            Students can use a word counter to check essays and
+            assignments. Writers and bloggers can use it to keep
+            articles within a desired length. Professionals can
+            use it for reports, applications, presentations,
+            and other written material.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FAQ
+========================================= -->
+
+<section
+    id="faq"
+    class="faq-section"
+>
+
+    <div class="container narrow-container">
+
+        <!-- ONLY ONE FAQ HEADING -->
+
+        <h2 class="faq-main-title">
+            Frequently Asked Questions
+        </h2>
+
+
+        <div class="faq-list">
+
+
+            <details class="faq-item">
+
+                <summary>
+                    What is a word counter?
+                </summary>
+
+                <div class="faq-answer">
+
+                    <p>
+                        A word counter is an online tool that
+                        calculates the number of words in your text.
+                        It can also provide information about
+                        characters, sentences, paragraphs, and
+                        other writing statistics.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+
+            <details class="faq-item">
+
+                <summary>
+                    How does this word counter work?
+                </summary>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Type or paste your text into the editor.
+                        WordCountHub automatically analyzes the
+                        text and updates the word, character,
+                        sentence, paragraph, and time statistics.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Is this word counter free to use?
+                </summary>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. WordCountHub is free to use and does
+                        not require you to create an account.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Can I count characters with this tool?
+                </summary>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. The tool displays both total characters
+                        and characters without spaces.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Can I use this tool for essays and assignments?
+                </summary>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Yes. Students can use the word counter to
+                        check essays, assignments, reports, and
+                        other written work against a required
+                        word count.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+
+            <details class="faq-item">
+
+                <summary>
+                    Does the word counter save my text?
+                </summary>
+
+                <div class="faq-answer">
+
+                    <p>
+                        The counting calculations are performed
+                        directly in your browser. The tool does not
+                        require an account or send your text to a
+                        server for counting.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+
+            <details class="faq-item">
+
+                <summary>
+                    What is reading time?
+                </summary>
+
+                <div class="faq-answer">
+
+                    <p>
+                        Reading time is an estimate based on your
+                        word count and an average reading speed.
+                        Actual reading time can vary from person
+                        to person.
+                    </p>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-card">
+
+            <h2>
+                Start Counting Your Words
+            </h2>
+
+            <p>
+                Paste your text above and instantly check
+                your word count and writing statistics.
+            </p>
+
+            <a
+                href="#tool-heading"
+                class="cta-button"
+            >
+                Use Word Counter
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="site-footer">
+
+    <div class="container footer-inner">
+
+
+        <div class="footer-brand">
 
             <a
                 href="./"
-                class="logo"
-                aria-label="WordCountHub Home"
+                class="logo footer-logo"
             >
-                <span class="logo-icon">📝</span>
-                <span>WordCount<span class="logo-accent">Hub</span></span>
+
+                <span class="logo-icon">
+                    📝
+                </span>
+
+                <span>
+                    WordCount<span class="logo-accent">Hub</span>
+                </span>
+
             </a>
 
-            <nav
-                class="main-nav"
-                aria-label="Main navigation"
-            >
-                <a href="./">Word Counter</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#faq">FAQ</a>
-                <a href="about.html">About</a>
-            </nav>
+            <p>
+                Simple and free online tools for working with text.
+            </p>
 
         </div>
-    </header>
 
 
-    <!-- Main Content -->
-    <main>
 
-        <!-- Hero -->
-        <section class="hero-section">
+        <div class="footer-links">
 
-            <div class="container">
+            <h3>
+                Quick Links
+            </h3>
 
-                <div class="hero-content">
+            <a href="./">
+                Word Counter
+            </a>
 
-                    <span class="eyebrow">
-                        FREE ONLINE WRITING TOOL
-                    </span>
+            <a href="#how-it-works">
+                How It Works
+            </a>
 
-                    <h1>
-                        Free Word Counter
-                    </h1>
+            <a href="#faq">
+                FAQ
+            </a>
 
-                    <p class="hero-description">
-                        Count words, characters, sentences, paragraphs,
-                        reading time, and speaking time instantly.
-                        No registration required.
-                    </p>
+            <a href="about.html">
+                About
+            </a>
 
-                </div>
+            <a href="privacy-policy.html">
+                Privacy Policy
+            </a>
 
-
-                <!-- Tool -->
-                <section
-                    class="counter-card"
-                    aria-labelledby="tool-heading"
-                >
-
-                    <div class="tool-header">
-
-                        <div>
-                            <h2 id="tool-heading">
-                                Word Counter Tool
-                            </h2>
-
-                            <p>
-                                Type or paste your text below.
-                                Results update automatically.
-                            </p>
-                        </div>
-
-                    </div>
-
-
-                    <!-- Text Area -->
-                    <div class="textarea-wrapper">
-
-                        <label
-                            for="textInput"
-                            class="sr-only"
-                        >
-                            Enter or paste your text
-                        </label>
-
-                        <textarea
-                            id="textInput"
-                            placeholder="Start typing or paste your text here..."
-                            spellcheck="true"
-                            aria-describedby="text-help"
-                        ></textarea>
-
-                        <p
-                            id="text-help"
-                            class="textarea-help"
-                        >
-                            Your text is processed directly in your browser.
-                        </p>
-
-                    </div>
-
-
-                    <!-- Word Limit -->
-                    <div class="word-limit-row">
-
-                        <label for="wordLimit">
-                            Word limit
-                        </label>
-
-                        <div class="limit-input-wrapper">
-
-                            <input
-                                type="number"
-                                id="wordLimit"
-                                min="0"
-                                placeholder="No limit"
-                                inputmode="numeric"
-                                aria-label="Word limit"
-                            >
-
-                            <button
-                                type="button"
-                                id="clearLimit"
-                                class="small-button"
-                                aria-label="Clear word limit"
-                            >
-                                Clear
-                            </button>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Word Limit Status -->
-                    <div
-                        id="limitStatus"
-                        class="limit-status"
-                        aria-live="polite"
-                    ></div>
-
-
-                    <!-- Statistics -->
-                    <div
-                        class="stats-grid"
-                        aria-live="polite"
-                    >
-
-                        <div class="stat-card primary-stat">
-                            <span
-                                class="stat-number"
-                                id="wordCount"
-                            >0</span>
-
-                            <span class="stat-label">
-                                Words
-                            </span>
-                        </div>
-
-
-                        <div class="stat-card">
-                            <span
-                                class="stat-number"
-                                id="characterCount"
-                            >0</span>
-
-                            <span class="stat-label">
-                                Characters
-                            </span>
-                        </div>
-
-
-                        <div class="stat-card">
-                            <span
-                                class="stat-number"
-                                id="characterNoSpaceCount"
-                            >0</span>
-
-                            <span class="stat-label">
-                                Characters Without Spaces
-                            </span>
-                        </div>
-
-
-                        <div class="stat-card">
-                            <span
-                                class="stat-number"
-                                id="sentenceCount"
-                            >0</span>
-
-                            <span class="stat-label">
-                                Sentences
-                            </span>
-                        </div>
-
-
-                        <div class="stat-card">
-                            <span
-                                class="stat-number"
-                                id="paragraphCount"
-                            >0</span>
-
-                            <span class="stat-label">
-                                Paragraphs
-                            </span>
-                        </div>
-
-
-                        <div class="stat-card">
-                            <span
-                                class="stat-number"
-                                id="readingTime"
-                            >0 min</span>
-
-                            <span class="stat-label">
-                                Reading Time
-                            </span>
-                        </div>
-
-
-                        <div class="stat-card">
-                            <span
-                                class="stat-number"
-                                id="speakingTime"
-                            >0 min</span>
-
-                            <span class="stat-label">
-                                Speaking Time
-                            </span>
-                        </div>
-
-                    </div>
-
-
-                    <!-- Buttons -->
-                    <div class="tool-actions">
-
-                        <button
-                            type="button"
-                            id="copyButton"
-                            class="button button-primary"
-                        >
-                            <span>📋</span>
-                            Copy Text
-                        </button>
-
-                        <button
-                            type="button"
-                            id="downloadButton"
-                            class="button button-secondary"
-                        >
-                            <span>⬇️</span>
-                            Download
-                        </button>
-
-                        <button
-                            type="button"
-                            id="clearButton"
-                            class="button button-danger"
-                        >
-                            <span>🗑️</span>
-                            Clear
-                        </button>
-
-                    </div>
-
-
-                    <p
-                        id="actionMessage"
-                        class="action-message"
-                        aria-live="polite"
-                    ></p>
-
-                </section>
-
-            </div>
-
-        </section>
-
-
-        <!-- How It Works -->
-        <section
-            id="how-it-works"
-            class="content-section"
-        >
-
-            <div class="container narrow-container">
-
-                <span class="section-label">
-                    HOW IT WORKS
-                </span>
-
-                <h2>
-                    How to Use the Word Counter
-                </h2>
-
-                <p>
-                    Using WordCountHub is simple. Enter or paste your
-                    text into the text box and the tool will automatically
-                    calculate your word count and other useful statistics.
-                </p>
-
-
-                <div class="steps-grid">
-
-                    <div class="step-card">
-                        <span class="step-number">1</span>
-
-                        <h3>
-                            Enter Your Text
-                        </h3>
-
-                        <p>
-                            Type directly into the editor or paste
-                            an existing document.
-                        </p>
-                    </div>
-
-
-                    <div class="step-card">
-                        <span class="step-number">2</span>
-
-                        <h3>
-                            Get Instant Results
-                        </h3>
-
-                        <p>
-                            Your word, character, sentence, and paragraph
-                            counts update automatically.
-                        </p>
-                    </div>
-
-
-                    <div class="step-card">
-                        <span class="step-number">3</span>
-
-                        <h3>
-                            Check Your Limits
-                        </h3>
-
-                        <p>
-                            Set a word limit to see whether your text
-                            stays within the required length.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- Features -->
-        <section class="features-section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        FEATURES
-                    </span>
-
-                    <h2>
-                        More Than Just a Word Counter
-                    </h2>
-
-                    <p>
-                        WordCountHub provides useful statistics to help
-                        students, writers, bloggers, professionals,
-                        and anyone working with text.
-                    </p>
-
-                </div>
-
-
-                <div class="features-grid">
-
-                    <article class="feature-card">
-                        <div class="feature-icon">🔢</div>
-
-                        <h3>
-                            Word Count
-                        </h3>
-
-                        <p>
-                            Quickly find the total number of words
-                            in your text.
-                        </p>
-                    </article>
-
-
-                    <article class="feature-card">
-                        <div class="feature-icon">🔤</div>
-
-                        <h3>
-                            Character Count
-                        </h3>
-
-                        <p>
-                            See character totals with and without spaces.
-                        </p>
-                    </article>
-
-
-                    <article class="feature-card">
-                        <div class="feature-icon">⏱️</div>
-
-                        <h3>
-                            Reading Time
-                        </h3>
-
-                        <p>
-                            Get an estimated reading time based on
-                            your word count.
-                        </p>
-                    </article>
-
-
-                    <article class="feature-card">
-                        <div class="feature-icon">🎤</div>
-
-                        <h3>
-                            Speaking Time
-                        </h3>
-
-                        <p>
-                            Estimate how long it may take to read
-                            your text aloud.
-                        </p>
-                    </article>
-
-
-                    <article class="feature-card">
-                        <div class="feature-icon">🎯</div>
-
-                        <h3>
-                            Word Limit
-                        </h3>
-
-                        <p>
-                            Set a custom word limit and instantly
-                            check your progress.
-                        </p>
-                    </article>
-
-
-                    <article class="feature-card">
-                        <div class="feature-icon">🔒</div>
-
-                        <h3>
-                            Privacy Friendly
-                        </h3>
-
-                        <p>
-                            Text processing happens directly in your
-                            browser without requiring an account.
-                        </p>
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- What Is a Word Counter -->
-        <section class="content-section">
-
-            <div class="container narrow-container">
-
-                <span class="section-label">
-                    WORD COUNTER GUIDE
-                </span>
-
-                <h2>
-                    What Is a Word Counter?
-                </h2>
-
-                <p>
-                    A word counter is an online tool that calculates
-                    the number of words in a piece of text. Word counting
-                    is useful when writing essays, articles, blog posts,
-                    social media content, applications, reports, and
-                    other documents with specific length requirements.
-                </p>
-
-                <p>
-                    WordCountHub also provides character, sentence,
-                    paragraph, reading-time, and speaking-time statistics
-                    so you can understand the length of your writing
-                    at a glance.
-                </p>
-
-
-                <h2>
-                    Who Can Use a Word Counter?
-                </h2>
-
-                <p>
-                    Students can use a word counter to check essay and
-                    assignment requirements. Writers and bloggers can
-                    use it to keep articles within a desired length.
-                    Professionals can use it for reports, presentations,
-                    applications, and other written material.
-                </p>
-
-
-                <h2>
-                    Why Is Word Count Important?
-                </h2>
-
-                <p>
-                    Many types of writing have recommended or required
-                    lengths. Keeping track of your word count can help
-                    you stay within an assignment requirement, article
-                    target, application limit, or social media constraint.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- FAQ -->
-        <section
-            id="faq"
-            class="faq-section"
-        >
-
-            <div class="container narrow-container">
-
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        FAQ
-                    </span>
-
-                    <h2>
-                        Frequently Asked Questions
-                    </h2>
-
-                </div>
-
-
-                <div class="faq-list">
-
-                    <details class="faq-item">
-
-                        <summary>
-                            Is WordCountHub free?
-                        </summary>
-
-                        <div class="faq-answer">
-                            <p>
-                                Yes. WordCountHub's word counter is
-                                free to use and does not require an account.
-                            </p>
-                        </div>
-
-                    </details>
-
-
-                    <details class="faq-item">
-
-                        <summary>
-                            Does the word counter update automatically?
-                        </summary>
-
-                        <div class="faq-answer">
-                            <p>
-                                Yes. The statistics update automatically
-                                as you type or paste text into the editor.
-                            </p>
-                        </div>
-
-                    </details>
-
-
-                    <details class="faq-item">
-
-                        <summary>
-                            Does WordCountHub save my text?
-                        </summary>
-
-                        <div class="faq-answer">
-                            <p>
-                                The word-counting calculations are performed
-                                directly in your browser. The tool does not
-                                require you to create an account or send your
-                                text to a server for counting.
-                            </p>
-                        </div>
-
-                    </details>
-
-
-                    <details class="faq-item">
-
-                        <summary>
-                            Does it count characters without spaces?
-                        </summary>
-
-                        <div class="faq-answer">
-                            <p>
-                                Yes. The tool displays both total characters
-                                and characters excluding whitespace.
-                            </p>
-                        </div>
-
-                    </details>
-
-
-                    <details class="faq-item">
-
-                        <summary>
-                            Can I use it for essays and assignments?
-                        </summary>
-
-                        <div class="faq-answer">
-                            <p>
-                                Yes. You can paste your essay or assignment
-                                into the editor and use the word counter
-                                and optional word limit to check its length.
-                            </p>
-                        </div>
-
-                    </details>
-
-
-                    <details class="faq-item">
-
-                        <summary>
-                            What is reading time?
-                        </summary>
-
-                        <div class="faq-answer">
-                            <p>
-                                Reading time is an estimate based on the
-                                number of words in your text and an average
-                                reading speed.
-                            </p>
-                        </div>
-
-                    </details>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- Final CTA -->
-        <section class="cta-section">
-
-            <div class="container">
-
-                <div class="cta-card">
-
-                    <h2>
-                        Start Counting Your Words
-                    </h2>
-
-                    <p>
-                        Paste your text above and get your word count
-                        and writing statistics instantly.
-                    </p>
-
-                    <a
-                        href="#tool-heading"
-                        class="cta-button"
-                    >
-                        Use Word Counter
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- Footer -->
-    <footer class="site-footer">
-
-        <div class="container footer-inner">
-
-            <div class="footer-brand">
-
-                <a
-                    href="./"
-                    class="logo footer-logo"
-                >
-                    <span class="logo-icon">📝</span>
-                    <span>WordCount<span class="logo-accent">Hub</span></span>
-                </a>
-
-                <p>
-                    A simple and free collection of online text tools.
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <h3>
-                    Links
-                </h3>
-
-                <a href="./">
-                    Word Counter
-                </a>
-
-                <a href="#how-it-works">
-                    How It Works
-                </a>
-
-                <a href="#faq">
-                    FAQ
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-                <a href="privacy-policy.html">
-                    Privacy Policy
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-            </div>
+            <a href="contact.html">
+                Contact
+            </a>
 
         </div>
 
+    </div>
 
-        <div class="footer-bottom">
 
-            <div class="container">
+    <div class="footer-bottom">
 
-                <p>
-                    © 2026 WordCountHub. All rights reserved.
-                </p>
+        <div class="container">
 
-            </div>
+            <p>
+                © 2026 WordCountHub. All rights reserved.
+            </p>
 
         </div>
 
-    </footer>
+    </div>
+
+</footer>
 
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
 
 </body>
 </html>
+```
